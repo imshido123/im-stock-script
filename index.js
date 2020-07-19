@@ -1,12 +1,18 @@
-const config = require('./config');
-const finnhub = require('finnhub');
- 
-const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = config.apiKey;
-const finnhubClient = new finnhub.DefaultApi();
+/*Dependencies*/
+const express = require('express');
+const { stock } = require('./routes/index');
 
-/*Stock*/
-//Quote
-finnhubClient.quote(config.stockSymbol, (error, data, response) => {
-    console.log(data);
+/*Initializing services*/
+const app = express();
+const PORT = 8000;
+
+/*Middlewares*/
+// app.use(express.json()); // Enabling JSON in routes operations
+
+/*End Points*/
+app.use('/stock/', stock);
+
+/*Instantiating the server*/
+const server = app.listen(PORT, () => {
+    console.log(`Listening http://localhost:${server.address().port}`);
 });

@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
-    "finnhub": "^1.1.7"
+    "express": "^4.17.1"
   }
 }
