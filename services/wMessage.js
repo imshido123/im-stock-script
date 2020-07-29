@@ -9,7 +9,7 @@ class WhatsAppMessage {
         /*Send Message*/
         await axios(`${apiBaseUrl}&text=${message}`)
             .then((response) => {
-                console.log('Message sent');
+                console.log('Message Sent');
             })
             .catch((error) => {
                 console.error('sendStockInfo method failed:', error); // Should be communicated to user - sending to internal log
